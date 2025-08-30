@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ningapa N | Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    :root {
+      --primary: #ff4d6d;
+      --secondary: #4b3f72;
+      --accent: #ffa41b;
+      --bg: #fdf6f0;
+      --card-bg: #ffffff;
+      --white: #ffffff;
+      --shadow: rgba(0,0,0,0.15);
+      --rainbow: linear-gradient(45deg, #ff4d6d, #ff9f1c, #fffa65, #2ec4b6, #9d4edd);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: "Segoe UI", Tahoma, sans-serif;
+      margin: 0;
+      background: var(--bg);
+      color: var(--secondary);
+    }
+
+    /* Animations */
+    .fade-in { opacity: 0; transform: translateY(30px); transition: all 0.8s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+    /* Hero Section */
+    header {
+      background: var(--rainbow);
+      background-size: 400% 400%;
+      animation: gradientAnim 10s ease infinite;
+      color: var(--white);
+      padding: 60px 20px;
+      text-align: center;
+      border-bottom-left-radius: 50% 15%;
+      border-bottom-right-radius: 50% 15%;
+    }
+
+    @keyframes gradientAnim {
+      0%{background-position:0% 50%;}
+      50%{background-position:100% 50%;}
+      100%{background-position:0% 50%;}
+    }
+
+    header img {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      border: 4px solid var(--white);
+      box-shadow: 0 0 25px var(--shadow);
+      margin-bottom: 15px;
+      transition: transform 0.5s, box-shadow 0.5s;
+      object-fit: cover;
+    }
+
+    header img:hover {
+      transform: scale(1.1) rotate(5deg);
+      box-shadow: 0 0 40px var(--shadow);
+    }
+
+    header h1 {
+      margin: 10px 0 5px;
+      font-size: 3rem;
+      letter-spacing: 2px;
+      background: var(--white);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    header p {
+      margin: 0;
+      font-size: 1.3rem;
+      font-weight: 500;
+      color: var(--white);
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+    }
+
+    .social-links a {
+      display: inline-block;
+      margin: 0 10px;
+      padding: 10px 20px;
+      background: var(--white);
+      color: var(--primary);
+      border-radius: 30px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: all 0.3s;
+      box-shadow: 0 4px 15px var(--shadow);
+    }
+
+    .social-links a:hover {
+      background: var(--accent);
+      color: var(--white);
+      transform: scale(1.15);
+    }
+
+    .resume-btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 14px 28px;
+      background: var(--secondary);
+      color: var(--white);
+      border-radius: 30px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: all 0.3s;
+      box-shadow: 0 4px 15px var(--shadow);
+    }
+
+    .resume-btn:hover {
+      background: var(--accent);
+      transform: scale(1.1);
+    }
+
+    /* Navbar */
+    nav {
+      position: sticky;
+      top: 0;
+      background: var(--white);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+      z-index: 1000;
+      border-radius: 0 0 20px 20px;
+      margin-bottom: 20px;
+    }
+
+    nav .bar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 10px 20px;
+    }
+
+    .menu-toggle { display: none; font-size: 28px; cursor: pointer; background: none; border: none; color: var(--secondary); }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      margin: 0;
+      padding: 10px 0;
+      gap: 25px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: var(--secondary);
+      font-weight: bold;
+      padding-bottom: 4px;
+      border-bottom: 2px solid transparent;
+      transition: all 0.3s;
+    }
+
+    nav ul li a:hover, nav ul li a.active {
+      color: var(--primary);
+      border-bottom-color: var(--primary);
+    }
+
+    @media(max-width:768px) {
+      .menu-toggle { display: block; }
+      nav ul { flex-direction: column; display: none; padding: 10px 16px; gap: 15px; }
+      nav ul.show { display: flex; }
+      nav .bar { justify-content: space-between; }
+    }
+
+    section { padding: 60px 20px; max-width: 1000px; margin: auto; }
+
+    h2 {
+      font-size: 2.4rem;
+      text-align: center;
+      background: var(--rainbow);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      margin-bottom: 30px;
+      letter-spacing: 1px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      padding: 30px;
+      margin-bottom: 30px;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px var(--shadow);
+      transition: transform 0.5s, box-shadow 0.5s;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 30px var(--shadow);
+    }
+
+    .skills i, .projects i {
+      color: var(--accent);
+      margin-right: 10px;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      background: var(--rainbow);
+      background-size: 400% 400%;
+      animation: gradientAnim 10s ease infinite;
+      color: var(--white);
+      padding: 25px;
+      margin-top: 40px;
+      border-radius: 20px 20px 0 0;
+    }
+  </style>
+</head>
+<body>
+
+<header class="fade-in">
+  <img src="profile.jpg" alt="Profile Photo">
+  <h1>Ningappa N</h1>
+  <p>Computer Science Graduate | Aspiring Software & DevOps Engineer</p>
+  <div class="social-links">
+    <a href="mailto:ninga8141@gmail.com"><i class="fa-solid fa-envelope"></i>Email</a>
+    <a href="https://www.linkedin.com/in/ninga-n-47432633a/" target="_blank"><i class="fa-brands fa-linkedin"></i>LinkedIn</a>
+    <a href="https://github.com/Ninga8141" target="_blank"><i class="fa-brands fa-github"></i>GitHub</a>
+  </div>
+  <a href="Resumeddps.pdf" download class="resume-btn"><i class="fa-solid fa-file"></i> Download Resume</a>
+</header>
+
+<nav>
+  <div class="bar">
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    <ul id="menu">
+      <li><a href="#summary">Summary</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section id="summary" class="fade-in">
+  <h2>Professional Summary</h2>
+  <div class="card">
+    <p>Enthusiastic Computer Science graduate with strong skills in Java, Python, SQL, and web technologies. Familiar with Git, SDLC, and AWS basics, with hands-on experience from academic projects. Eager to learn, adapt, and contribute to building scalable software solutions.</p>
+  </div>
+</section>
+
+<section id="skills" class="fade-in">
+  <h2>Technical Skills</h2>
+  <div class="card skills">
+    <p><i class="fa-solid fa-code"></i>Java, Python, HTML, CSS, SQL, C++, Linux</p>
+    <p><i class="fa-solid fa-layer-group"></i>Pandas, NumPy, Scikit-Learn, Matplotlib</p>
+    <p><i class="fa-solid fa-cloud"></i>AWS (ECS, ECR, ALB, RDS, S3, CloudWatch)</p>
+    <p><i class="fa-solid fa-tools"></i>Terraform, Packer, Docker, Kubernetes, Ansible, Puppet</p>
+    <p><i class="fa-solid fa-check"></i>TDD, CI/CD, Agile, Jenkins, Chef</p>
+  </div>
+</section>
+
+<section id="education" class="fade-in">
+  <h2>Education</h2>
+  <div class="card">
+    <p><i class="fa-solid fa-graduation-cap"></i><strong>Master of Science (Computer Science)</strong> – Bangalore University, 2025 (CGPA: 6.7)</p>
+    <p><i class="fa-solid fa-graduation-cap"></i><strong>Bachelor of Science (EMCs)</strong> – Nrupathunga University, 2021 (CGPA: 6.1)</p>
+  </div>
+</section>
+
+<section id="projects" class="fade-in">
+  <h2>Projects</h2>
+  <div class="card projects">
+    <h3><i class="fa-solid fa-utensils"></i>Zomato App Deployment – Infrastructure as Code & CI/CD Pipeline</h3>
+    <p><strong>Technologies:</strong> Terraform, AWS, Jenkins, Docker, Git, CloudWatch</p>
+    <p>Automated deployment pipeline for a containerized Zomato-like app using Terraform and Jenkins.</p>
+  </div>
+  <div class="card projects">
+    <h3><i class="fa-solid fa-server"></i>Argo CD Deployment – GitOps Workflow on Kubernetes</h3>
+    <p><strong>Technologies:</strong> Argo CD, Kubernetes, Docker, Helm, Kustomize, GitHub</p>
+    <p>Implemented GitOps continuous delivery using Argo CD on Kubernetes clusters, with automated rollback and monitoring.</p>
+  </div>
+</section>
+
+<section id="contact" class="fade-in">
+  <h2>Contact</h2>
+  <div class="card">
+    <p><i class="fa-solid fa-envelope"></i> Email: <a href="mailto:ninga8141@gmail.com">ninga8141@gmail.com</a></p>
+    <p><i class="fa-brands fa-linkedin"></i> LinkedIn: <a href="https://www.linkedin.com/in/ninga-n-47432633a/" target="_blank">linkedin.com/in/ninga-n-47432633a</a></p>
+    <p><i class="fa-brands fa-github"></i> GitHub: <a href="https://github.com/Ninga8141" target="_blank">github.com/Ninga8141</a></p>
+    <p><i class="fa-solid fa-phone"></i> Phone: +91 7996113430</p>
+    <p><i class="fa-solid fa-location-dot"></i> Location: Bangalore, Karnataka</p>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 Ninga N | Built with ❤️ and GitHub Pages</p>
+</footer>
+
+<script>
+  function toggleMenu() { document.getElementById("menu").classList.toggle("show"); }
+
+  // Active link highlight on scroll
+  window.addEventListener("scroll", () => {
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll("nav ul li a");
+    let current = "";
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 100;
+      if (window.pageYOffset >= sectionTop) current = section.getAttribute("id");
+    });
+    navLinks.forEach(link => { link.classList.toggle("active", link.getAttribute("href") === "#" + current); });
+
+    // Fade-in effect
+    document.querySelectorAll('.fade-in').forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if(rect.top < window.innerHeight - 50){ el.classList.add('visible'); }
+    });
+  });
+</script>
+</body>
+</html>
