@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ningapa N | Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ningappa N | Portfolio</title>
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
   <style>
     :root {
       --primary: #ff4d6d;
@@ -14,28 +16,34 @@
       --card-bg: #ffffff;
       --white: #ffffff;
       --shadow: rgba(0,0,0,0.15);
-      --rainbow: linear-gradient(45deg, #ff4d6d, #ff9f1c, #fffa65, #2ec4b6, #9d4edd);
+      --rainbow: linear-gradient(45deg,#ff4d6d,#ff9f1c,#fffa65,#2ec4b6,#9d4edd);
     }
 
     html { scroll-behavior: smooth; }
 
     body {
-      font-family: "Segoe UI", Tahoma, sans-serif;
       margin: 0;
+      font-family: "Segoe UI", Tahoma, sans-serif;
       background: var(--bg);
       color: var(--secondary);
     }
 
-    /* Animations */
-    .fade-in { opacity: 0; transform: translateY(30px); transition: all 0.8s ease; }
-    .fade-in.visible { opacity: 1; transform: translateY(0); }
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease;
+    }
 
-    /* Hero Section */
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
     header {
       background: var(--rainbow);
       background-size: 400% 400%;
       animation: gradientAnim 10s ease infinite;
-      color: var(--white);
+      color: white;
       padding: 60px 20px;
       text-align: center;
       border-bottom-left-radius: 50% 15%;
@@ -52,271 +60,239 @@
       width: 160px;
       height: 160px;
       border-radius: 50%;
-      border: 4px solid var(--white);
-      box-shadow: 0 0 25px var(--shadow);
-      margin-bottom: 15px;
-      transition: transform 0.5s, box-shadow 0.5s;
+      border: 4px solid white;
       object-fit: cover;
-    }
-
-    header img:hover {
-      transform: scale(1.1) rotate(5deg);
-      box-shadow: 0 0 40px var(--shadow);
+      margin-bottom: 15px;
     }
 
     header h1 {
-      margin: 10px 0 5px;
+      margin: 10px 0;
       font-size: 3rem;
-      letter-spacing: 2px;
-      background: var(--white);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
     }
 
     header p {
-      margin: 0;
       font-size: 1.3rem;
       font-weight: 500;
-      color: var(--white);
-      text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
     }
 
     .social-links a {
-      display: inline-block;
-      margin: 0 10px;
-      padding: 10px 20px;
-      background: var(--white);
+      margin: 0 8px;
+      padding: 10px 18px;
+      background: white;
       color: var(--primary);
       border-radius: 30px;
-      font-weight: bold;
       text-decoration: none;
-      transition: all 0.3s;
-      box-shadow: 0 4px 15px var(--shadow);
-    }
-
-    .social-links a:hover {
-      background: var(--accent);
-      color: var(--white);
-      transform: scale(1.15);
+      font-weight: bold;
+      display: inline-block;
     }
 
     .resume-btn {
-      display: inline-block;
       margin-top: 20px;
-      padding: 14px 28px;
+      display: inline-block;
+      padding: 14px 30px;
       background: var(--secondary);
-      color: var(--white);
+      color: white;
       border-radius: 30px;
-      font-weight: bold;
       text-decoration: none;
-      transition: all 0.3s;
-      box-shadow: 0 4px 15px var(--shadow);
+      font-weight: bold;
     }
 
-    .resume-btn:hover {
-      background: var(--accent);
-      transform: scale(1.1);
-    }
-
-    /* Navbar */
     nav {
       position: sticky;
       top: 0;
-      background: var(--white);
+      background: white;
       box-shadow: 0 6px 20px rgba(0,0,0,0.1);
       z-index: 1000;
-      border-radius: 0 0 20px 20px;
-      margin-bottom: 20px;
     }
-
-    nav .bar {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 10px 20px;
-    }
-
-    .menu-toggle { display: none; font-size: 28px; cursor: pointer; background: none; border: none; color: var(--secondary); }
 
     nav ul {
       display: flex;
       justify-content: center;
-      list-style: none;
-      margin: 0;
-      padding: 10px 0;
       gap: 25px;
+      list-style: none;
+      padding: 15px;
+      margin: 0;
     }
 
     nav ul li a {
       text-decoration: none;
-      color: var(--secondary);
       font-weight: bold;
-      padding-bottom: 4px;
-      border-bottom: 2px solid transparent;
-      transition: all 0.3s;
+      color: var(--secondary);
     }
 
-    nav ul li a:hover, nav ul li a.active {
-      color: var(--primary);
-      border-bottom-color: var(--primary);
+    section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
     }
-
-    @media(max-width:768px) {
-      .menu-toggle { display: block; }
-      nav ul { flex-direction: column; display: none; padding: 10px 16px; gap: 15px; }
-      nav ul.show { display: flex; }
-      nav .bar { justify-content: space-between; }
-    }
-
-    section { padding: 60px 20px; max-width: 1000px; margin: auto; }
 
     h2 {
-      font-size: 2.4rem;
       text-align: center;
+      font-size: 2.3rem;
       background: var(--rainbow);
-      background-clip: text;
       -webkit-background-clip: text;
       color: transparent;
       margin-bottom: 30px;
-      letter-spacing: 1px;
     }
 
     .card {
-      background: var(--card-bg);
+      background: white;
       padding: 30px;
-      margin-bottom: 30px;
       border-radius: 20px;
       box-shadow: 0 10px 25px var(--shadow);
-      transition: transform 0.5s, box-shadow 0.5s;
+      margin-bottom: 25px;
     }
 
-    .card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 15px 30px var(--shadow);
-    }
-
-    .skills i, .projects i {
-      color: var(--accent);
-      margin-right: 10px;
-    }
-
-    /* Footer */
     footer {
-      text-align: center;
       background: var(--rainbow);
-      background-size: 400% 400%;
-      animation: gradientAnim 10s ease infinite;
-      color: var(--white);
+      color: white;
+      text-align: center;
       padding: 25px;
       margin-top: 40px;
-      border-radius: 20px 20px 0 0;
     }
   </style>
 </head>
+
 <body>
 
 <header class="fade-in">
-  <img src="profile.jpg" alt="Profile Photo">
+  <img src="profile.jpg" alt="Profile Photo" />
   <h1>Ningappa N</h1>
-  <p>Computer Science Graduate | Aspiring Software & DevOps Engineer</p>
+  <p>Computer Science Graduate | DevOps & Software Engineer</p>
+
   <div class="social-links">
-    <a href="mailto:ninga8141@gmail.com"><i class="fa-solid fa-envelope"></i>Email</a>
-    <a href="https://www.linkedin.com/in/ninga-n-47432633a/" target="_blank"><i class="fa-brands fa-linkedin"></i>LinkedIn</a>
-    <a href="https://github.com/Ninga8141" target="_blank"><i class="fa-brands fa-github"></i>GitHub</a>
+    <a href="mailto:ninga8141@gmail.com"><i class="fa-solid fa-envelope"></i> Email</a>
+    <a href="https://www.linkedin.com/in/ninga-n-47432633a/" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+    <a href="https://github.com/Ninga8141" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
   </div>
-  <a href="Resumeddps.pdf" download class="resume-btn"><i class="fa-solid fa-file"></i> Download Resume</a>
+
+  <a href="Resumeddps.pdf" download class="resume-btn">
+    <i class="fa-solid fa-file"></i> Download Resume
+  </a>
 </header>
 
 <nav>
-  <div class="bar">
-    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
-    <ul id="menu">
-      <li><a href="#summary">Summary</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#education">Education</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </div>
+  <ul>
+    <li><a href="#summary">Summary</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#certifications">Certifications</a></li>
+    <li><a href="#languages">Languages</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
 </nav>
 
 <section id="summary" class="fade-in">
   <h2>Professional Summary</h2>
   <div class="card">
-    <p>Enthusiastic Computer Science graduate with strong skills in Java, Python, SQL, and web technologies. Familiar with Git, SDLC, and AWS basics, with hands-on experience from academic projects. Eager to learn, adapt, and contribute to building scalable software solutions.</p>
+    <p>
+      Enthusiastic Computer Science graduate with strong skills in Java, Python, SQL, and DevOps tools.
+      Hands-on experience with AWS, CI/CD pipelines, Docker, Kubernetes, and GitOps workflows.
+      Passionate about automation, cloud-native technologies, and building scalable software solutions.
+    </p>
   </div>
 </section>
 
 <section id="skills" class="fade-in">
   <h2>Technical Skills</h2>
-  <div class="card skills">
-    <p><i class="fa-solid fa-code"></i>Java, Python, HTML, CSS, SQL, C++, Linux</p>
-    <p><i class="fa-solid fa-layer-group"></i>Pandas, NumPy, Scikit-Learn, Matplotlib</p>
-    <p><i class="fa-solid fa-cloud"></i>AWS (ECS, ECR, ALB, RDS, S3, CloudWatch)</p>
-    <p><i class="fa-solid fa-tools"></i>Terraform, Packer, Docker, Kubernetes, Ansible, Puppet</p>
-    <p><i class="fa-solid fa-check"></i>TDD, CI/CD, Agile, Jenkins, Chef</p>
+  <div class="card">
+    <p><strong>Programming:</strong> Java, Python, Linux, SQL</p>
+    <p><strong>Cloud:</strong> AWS (ECS, ECR, ALB, RDS, S3, CloudWatch)</p>
+    <p><strong>DevOps Tools:</strong> Docker, Kubernetes, Jenkins, Terraform, Ansible, Chef</p>
+    <p><strong>Version Control:</strong> Git, GitHub</p>
+    <p><strong>Testing:</strong> Selenium (Java), TestNG, Postman, REST API, Manual Testing</p>
+    <p><strong>Practices:</strong> CI/CD, GitOps, TDD, Agile, SDLC</p>
+  </div>
+</section>
+
+<section id="experience" class="fade-in">
+  <h2>Experience</h2>
+  <div class="card">
+    <h3>DevOps Intern — Elevate Labs</h3>
+    <p><strong>Oct 2025 – Dec 2025 | Bangalore</strong></p>
+    <ul>
+      <li>Implemented GitOps deployment using Kubernetes and Argo CD</li>
+      <li>Worked on Docker containerization and CI/CD optimization</li>
+      <li>Troubleshot deployment and pipeline issues</li>
+      <li>Improved automation workflows and monitoring</li>
+    </ul>
+  </div>
+</section>
+
+<section id="projects" class="fade-in">
+  <h2>Projects</h2>
+
+  <div class="card">
+    <h3>GitOps Deployment using Argo CD & Kubernetes</h3>
+    <p>
+      Automated Kubernetes deployments using Argo CD with GitOps principles,
+      enabling auto-sync, version control, and rollback.
+    </p>
+  </div>
+
+  <div class="card">
+    <h3>End-to-End CI/CD Enabled MEAN Stack Application</h3>
+    <p><strong>Technologies:</strong> Angular, Node.js, MongoDB, Docker, Jenkins, AWS EC2, S3, Nginx</p>
+    <ul>
+      <li>Developed full-stack MEAN application with REST APIs</li>
+      <li>Built Jenkins CI/CD pipeline with Docker</li>
+      <li>Deployed backend on EC2 and frontend on S3</li>
+    </ul>
   </div>
 </section>
 
 <section id="education" class="fade-in">
   <h2>Education</h2>
   <div class="card">
-    <p><i class="fa-solid fa-graduation-cap"></i><strong>Master of Science (Computer Science)</strong> – Bangalore University, 2025 (CGPA: 6.7)</p>
-    <p><i class="fa-solid fa-graduation-cap"></i><strong>Bachelor of Science (EMCs)</strong> – Nrupathunga University, 2021 (CGPA: 6.1)</p>
+    <p><strong>M.Sc Computer Science</strong> — Bangalore University (2025) | CGPA: 6.7</p>
+    <p><strong>B.Sc (EMCs)</strong> — Nrupathunga University (2021) | CGPA: 6.1</p>
   </div>
 </section>
 
-<section id="projects" class="fade-in">
-  <h2>Projects</h2>
-  <div class="card projects">
-    <h3><i class="fa-solid fa-utensils"></i>Zomato App Deployment – Infrastructure as Code & CI/CD Pipeline</h3>
-    <p><strong>Technologies:</strong> Terraform, AWS, Jenkins, Docker, Git, CloudWatch</p>
-    <p>Automated deployment pipeline for a containerized Zomato-like app using Terraform and Jenkins.</p>
+<section id="certifications" class="fade-in">
+  <h2>Certifications</h2>
+  <div class="card">
+    <ul>
+      <li>AWS DevOps – PythonLife (2025)</li>
+      <li>Software Testing – Besant Technologies (2024)</li>
+    </ul>
   </div>
-  <div class="card projects">
-    <h3><i class="fa-solid fa-server"></i>Argo CD Deployment – GitOps Workflow on Kubernetes</h3>
-    <p><strong>Technologies:</strong> Argo CD, Kubernetes, Docker, Helm, Kustomize, GitHub</p>
-    <p>Implemented GitOps continuous delivery using Argo CD on Kubernetes clusters, with automated rollback and monitoring.</p>
+</section>
+
+<section id="languages" class="fade-in">
+  <h2>Languages</h2>
+  <div class="card">
+    <p>Kannada (Native)</p>
+    <p>English (Proficient)</p>
+    <p>Hindi (Intermediate)</p>
+    <p>Telugu (Intermediate)</p>
   </div>
 </section>
 
 <section id="contact" class="fade-in">
   <h2>Contact</h2>
   <div class="card">
-    <p><i class="fa-solid fa-envelope"></i> Email: <a href="mailto:ninga8141@gmail.com">ninga8141@gmail.com</a></p>
-    <p><i class="fa-brands fa-linkedin"></i> LinkedIn: <a href="https://www.linkedin.com/in/ninga-n-47432633a/" target="_blank">linkedin.com/in/ninga-n-47432633a</a></p>
-    <p><i class="fa-brands fa-github"></i> GitHub: <a href="https://github.com/Ninga8141" target="_blank">github.com/Ninga8141</a></p>
-    <p><i class="fa-solid fa-phone"></i> Phone: +91 7996113430</p>
-    <p><i class="fa-solid fa-location-dot"></i> Location: Bangalore, Karnataka</p>
+    <p>Email: <a href="mailto:ninga8141@gmail.com">ninga8141@gmail.com</a></p>
+    <p>Phone: +91 7996113430</p>
+    <p>Location: Bangalore, Karnataka</p>
   </div>
 </section>
 
 <footer>
-  <p>© 2025 Ninga N | Built with ❤️ and GitHub Pages</p>
+  <p>© 2025 Ningappa N | Built with ❤️ & DevOps</p>
 </footer>
 
 <script>
-  function toggleMenu() { document.getElementById("menu").classList.toggle("show"); }
-
-  // Active link highlight on scroll
   window.addEventListener("scroll", () => {
-    const sections = document.querySelectorAll("section");
-    const navLinks = document.querySelectorAll("nav ul li a");
-    let current = "";
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop - 100;
-      if (window.pageYOffset >= sectionTop) current = section.getAttribute("id");
-    });
-    navLinks.forEach(link => { link.classList.toggle("active", link.getAttribute("href") === "#" + current); });
-
-    // Fade-in effect
-    document.querySelectorAll('.fade-in').forEach(el => {
-      const rect = el.getBoundingClientRect();
-      if(rect.top < window.innerHeight - 50){ el.classList.add('visible'); }
+    document.querySelectorAll(".fade-in").forEach(el => {
+      if (el.getBoundingClientRect().top < window.innerHeight - 50) {
+        el.classList.add("visible");
+      }
     });
   });
 </script>
+
 </body>
 </html>
